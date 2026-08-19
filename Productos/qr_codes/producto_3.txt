@@ -1,0 +1,8 @@
+📌 Producto: Arroz
+📄 Descripción: Cereal Nutritivo
+📦 Categoría: Cereales
+🔖 SKU: 20000
+💰 Precio: $200.00
+📉 Stock Actual: 450
+⚠️ Stock Mínimo: 400
+📏 Unidad de Medida: kilogramo

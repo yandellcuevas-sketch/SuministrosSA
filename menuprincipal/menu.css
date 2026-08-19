@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body {
+    background: linear-gradient(135deg, #2baeff, #96e6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.menu-container {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 95%;
+    max-width: 800px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #007bff;
+    padding: 25px;
+    border-radius: 20px 20px 0 0;
+}
+
+
+.logo-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+
+.logo-container h1 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.menu-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+
+.menu-link {
+    display: inline-block;
+    background: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 18px 35px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.menu-link:hover {
+    background: #005bbf;
+    transform: scale(1.08);
+}
+
+
+.logout {
+    background: #ff4d4d;
+    margin-top: 40px; 
+    padding: 20px 40px;
+}
+
+.logout:hover {
+    background: #cc0000;
+    transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        width: 100%;
+        padding: 40px;
+    }
+    
+    .menu-links {
+        flex-wrap: wrap;
+    }
+
+    .menu-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .logout {
+        width: 100%;
+    }
+}
