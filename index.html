@@ -518,21 +518,163 @@
             margin-top: auto;
         }
 
-        /* Vista de Login Inicial */
-        .login-screen {
-            max-width: 420px;
-            margin: 60px auto;
-            background: #fff;
-            padding: 36px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-            text-align: center;
+        /* Vista de Login Inicial - Estilo Premium */
+        .login-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 160px);
+            padding: 20px;
         }
-        .login-screen img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+
+        .login-screen {
+            max-width: 460px;
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: 48px 38px;
+            border-radius: 24px;
+            box-shadow: 0 25px 60px -15px rgba(0, 80, 200, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(25px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .login-badge {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 18px auto;
+            background: linear-gradient(135deg, #007bff 0%, #00d2ff 100%);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 32px;
+            box-shadow: 0 12px 25px rgba(0, 123, 255, 0.38);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .login-badge:hover {
+            transform: rotate(8deg) scale(1.08);
+        }
+
+        .login-screen h2 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            background: linear-gradient(135deg, #0f172a 0%, #0056b3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .login-subtitle {
+            color: #64748b;
+            font-size: 13.5px;
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        .login-input-group {
+            display: flex;
+            align-items: center;
+            background: #f8fafc;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 4px 14px;
             margin-bottom: 16px;
+            transition: all 0.25s ease;
+            text-align: left;
+        }
+
+        .login-input-group:focus-within {
+            border-color: var(--primary);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.12);
+            transform: translateY(-1px);
+        }
+
+        .login-input-group i {
+            font-size: 17px;
+            color: #94a3b8;
+            margin-right: 12px;
+            transition: color 0.25s ease;
+        }
+
+        .login-input-group:focus-within i {
+            color: var(--primary);
+        }
+
+        .login-input-group input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            padding: 12px 0;
+            font-size: 14.5px;
+            font-weight: 500;
+            color: #0f172a;
+        }
+
+        .btn-login-submit {
+            background: linear-gradient(135deg, #007bff 0%, #0099ff 100%);
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 15.5px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 25px rgba(0, 123, 255, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .btn-login-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 123, 255, 0.45);
+            filter: brightness(1.05);
+        }
+
+        .btn-demo-pill {
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px dashed #cbd5e1;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            margin-top: 12px;
+            transition: all 0.2s;
+        }
+
+        .btn-demo-pill:hover {
+            background: #e0f2fe;
+            color: #0369a1;
+            border-color: #7dd3fc;
+            transform: translateY(-1px);
         }
     </style>
 </head>
@@ -580,24 +722,28 @@
     <main>
 
         <!-- 1. VISTA DE LOGIN / REGISTRO -->
-        <section id="view-login" class="login-screen">
-            <img src="menuprincipal/dfctrack.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Suministros+SA&background=007bff&color=fff'" alt="Logo">
-            <h2 style="font-weight: 800; color: #1e293b; margin-bottom: 6px;">SUMINISTROS S.A.</h2>
-            <p style="color: #64748b; font-size: 14px; margin-bottom: 24px;">Inicia sesión para acceder al sistema</p>
+        <div id="view-login" class="login-wrapper">
+            <section class="login-screen">
+                <div class="login-badge">
+                    <i class="fas fa-boxes-stacked"></i>
+                </div>
+                <h2>SUMINISTROS S.A.</h2>
+                <p class="login-subtitle">Sistema Integrado de Gestión Empresarial</p>
 
-            <form id="form-login" onsubmit="procesarLogin(event)" style="display: flex; flex-direction: column; gap: 14px;">
-                <div class="form-group">
-                    <label>Usuario</label>
-                    <input type="text" id="login-usuario" value="admin" required placeholder="Ingresa tu usuario">
-                </div>
-                <div class="form-group">
-                    <label>Contraseña</label>
-                    <input type="password" id="login-password" value="admin" required placeholder="Ingresa tu contraseña">
-                </div>
-                <button type="submit" class="btn btn-primary" style="margin-top: 8px;"><i class="fas fa-sign-in-alt"></i> Entrar al Sistema</button>
-                <button type="button" class="btn btn-secondary btn-sm" onclick="loginRapido()"><i class="fas fa-magic"></i> Demo 1-Click (admin / admin)</button>
-            </form>
-        </section>
+                <form id="form-login" onsubmit="procesarLogin(event)">
+                    <div class="login-input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="login-usuario" value="admin" required placeholder="Usuario (ej. admin)" autocomplete="username">
+                    </div>
+                    <div class="login-input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-password" value="admin" required placeholder="Contraseña de acceso" autocomplete="current-password">
+                    </div>
+                    <button type="submit" class="btn-login-submit"><i class="fas fa-arrow-right-to-bracket"></i> Iniciar Sesión</button>
+                    <button type="button" class="btn-demo-pill" onclick="loginRapido()"><i class="fas fa-bolt" style="color: #0284c7;"></i> Acceso Rápido Demo (admin / admin)</button>
+                </form>
+            </section>
+        </div>
 
         <!-- 2. VISTA DE DASHBOARD / MENÚ PRINCIPAL -->
         <section id="view-dashboard" class="card" style="display: none;">
