@@ -11,8 +11,8 @@
 <body>
     <div class="login-container">
         <div class="login-header">
-            <div class="logo-badge">
-                <i class="fas fa-boxes-stacked"></i>
+            <div class="logo-image-wrapper">
+                <img src="../menuprincipal/dfctrack.jpg" onerror="this.src='../Productos/dfctrack.jpg'" alt="Logo Suministros S.A.">
             </div>
             <h2>SUMINISTROS S.A.</h2>
             <p class="subtitle">Portal de Gestión y Control Empresarial</p>
